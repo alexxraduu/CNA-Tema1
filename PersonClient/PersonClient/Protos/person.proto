@@ -1,0 +1,38 @@
+syntax = "proto3";
+
+option csharp_namespace = "PersonClient";
+
+package personservice;
+
+service PersonService{
+
+	rpc SendPersonalData(PersonalDataRequest) returns (PersonalDataResponse); 
+}
+
+message PersonalDataRequest{
+	string firstName = 1;
+	string lastName = 2;
+	string cnp = 3;
+}
+
+message PersonalDataResponse{
+	Status status = 1;
+
+	enum Status{
+		ERROR = 0;
+		SUCCESS = 1;
+	}
+}
+
+message Person{
+	string firstName = 1;
+	string lastName = 2;
+	int32 age = 3;
+	Gender gender= 4;
+
+	enum Gender{
+		Male = 0;
+		Female = 1;
+		Unknown = 2;
+	}
+}
