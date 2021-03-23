@@ -28,7 +28,8 @@ message Person{
 	string firstName = 1;
 	string lastName = 2;
 	int32 age = 3;
-	Gender gender= 4;
+	Gender gender = 4;
+	string cnp = 5;
 
 	enum Gender{
 		Male = 0;

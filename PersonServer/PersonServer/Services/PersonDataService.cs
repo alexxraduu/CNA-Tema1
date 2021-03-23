@@ -64,7 +64,8 @@ namespace PersonServer.Services
                 FirstName = request.FirstName,
                 LastName = request.LastName,
                 Age = GetAge(request.Cnp),
-                Gender = GetGender(request.Cnp)
+                Gender = GetGender(request.Cnp),
+                Cnp = request.Cnp
             };
             if (person.Age == -1)
             {
@@ -73,6 +74,7 @@ namespace PersonServer.Services
                "\n---------------" +
                "\nFirst name: " + person.FirstName +
                "\nLast name: " + person.LastName +
+               "\nCNP: " + person.Cnp +
                "\nAge: " + "INVALID" +
                "\nGender: " + person.Gender +
                "\n---------------\n");
@@ -85,6 +87,7 @@ namespace PersonServer.Services
                     "\n---------------" +
                     "\nFirst name: " + person.FirstName +
                     "\nLast name: " + person.LastName +
+                    "\nCNP: " + person.Cnp +
                     "\nAge: " + person.Age +
                     "\nGender: " + person.Gender +
                     "\n---------------\n");
